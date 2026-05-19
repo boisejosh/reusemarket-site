@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const R2 = 'https://pub-90e482e9a0c642bc8847dbcc0f19e82d.r2.dev';
 ---
 
 <BaseLayout
@@ -51,7 +52,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Large top photo spanning both columns -->
         <div class="col-span-2 overflow-hidden rounded-xl" style="height: 220px;">
           <img
-            src="/images/gallery-1.svg"
+            src={`${R2}/gallery-1.svg`}
             alt="Inside The ReUse Market — shelves of sorted art and craft materials"
             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             width="900" height="220"
@@ -61,7 +62,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Bottom row: 2 smaller photos -->
         <div class="overflow-hidden rounded-xl" style="height: 160px;">
           <img
-            src="/images/gallery-2.svg"
+            src={`${R2}/gallery-2.svg`}
             alt="Fabric scraps and textiles at The ReUse Market"
             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             width="440" height="160"
@@ -70,7 +71,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="overflow-hidden rounded-xl" style="height: 160px;">
           <img
-            src="/images/gallery-3.svg"
+            src={`${R2}/gallery-3.svg`}
             alt="Art supplies and craft materials"
             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             width="440" height="160"
@@ -86,16 +87,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="px-2 pb-4" aria-label="More photos from The ReUse Market">
     <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2">
       <div class="overflow-hidden rounded-lg reveal" style="height:180px;">
-        <img src="/images/gallery-4.svg" alt="Design samples and specialty materials" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
+        <img src={`${R2}/gallery-4.svg`} alt="Design samples and specialty materials" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
       </div>
       <div class="overflow-hidden rounded-lg reveal reveal-delay-1" style="height:180px;">
-        <img src="/images/gallery-5.svg" alt="Beads, buttons, and mixed media supplies" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
+        <img src={`${R2}/gallery-5.svg`} alt="Beads, buttons, and mixed media supplies" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
       </div>
       <div class="overflow-hidden rounded-lg reveal reveal-delay-2" style="height:180px;">
-        <img src="/images/materials-1.svg" alt="Yarn, ribbon, and textile materials" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
+        <img src={`${R2}/materials-1.svg`} alt="Yarn, ribbon, and textile materials" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
       </div>
       <div class="overflow-hidden rounded-lg reveal reveal-delay-3" style="height:180px;">
-        <img src="/images/materials-2.svg" alt="Paper, cardstock, and specialty papers" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
+        <img src={`${R2}/materials-2.svg`} alt="Paper, cardstock, and specialty papers" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
       </div>
     </div>
   </section>
