@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="@ The Market"
+  description="Explore what you'll find at The ReUse Market in Garden City, Idaho — a unique collection of donated art and craft materials available for purchase."
+>
+
+  <!-- Page Header -->
+  <section class="py-14 md:py-20" style="background: linear-gradient(135deg, #2d4a2d 0%, #3d6b3d 100%);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <nav class="text-sm text-green-300 mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-green-100">@ The Market</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-heading font-bold text-white">@ The Market</h1>
+      <p class="mt-3 text-green-100 text-lg max-w-xl">What to expect when you visit — and why you should.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+    <div class="max-w-3xl">
+      <p class="text-xl text-gray-700 leading-relaxed mb-6 reveal">
+        The ReUse Market stocks an eclectic, ever-changing mix of donated art and craft supplies — all priced well below retail. Every visit is different, because every donation is different.
+      </p>
+      <p class="text-gray-600 leading-relaxed reveal reveal-delay-1">
+        Whether you're an artist looking for unusual materials, a teacher stretching a tight classroom budget, or a crafter who loves a treasure hunt, there's always something worth finding.
+      </p>
+    </div>
+  </section>
+
+  <!-- What You'll Find -->
+  <section style="background-color: #f2ede3;" class="py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-heading font-bold mb-10 text-center reveal" style="color: #2d4a2d;">What You'll Find</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {[
+          { icon: '🎨', label: 'Fabric & Textiles', desc: 'Fabric scraps, ribbon, yarn, felt, and sewing notions.' },
+          { icon: '📦', label: 'Paper & Cardboard', desc: 'Cardstock, foam board, specialty papers, and packaging materials.' },
+          { icon: '🖌️', label: 'Art Supplies', desc: 'Brushes, paints, markers, and drawing tools.' },
+          { icon: '✂️', label: 'Craft Materials', desc: 'Beads, buttons, wire, foam, and mixed media supplies.' },
+          { icon: '📐', label: 'Design Samples', desc: 'Interior design samples — tile, wallpaper, flooring, and fabric swatches.' },
+          { icon: '🌿', label: 'Unique & Eclectic', desc: 'One-of-a-kind materials that defy categorization — always a surprise.' },
+        ].map((item, i) => (
+          <div class={`bg-white rounded-xl p-6 card-hover reveal${i > 0 ? ` reveal-delay-${Math.min(i, 3)}` : ''}`} style="border: 1px solid #e8f0e8;">
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h3 class="font-heading font-semibold mb-2" style="color: #2d4a2d;">{item.label}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <h2 class="text-3xl font-heading font-bold mb-6" style="color: #2d4a2d;">How It Works</h2>
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 mt-0.5" style="background-color: #5a8a5a;">1</div>
+            <div>
+              <h4 class="font-semibold mb-1" style="color: #2d4a2d;">Donations come in</h4>
+              <p class="text-sm text-gray-600">Businesses, artists, and individuals donate clean, reusable materials that might otherwise be discarded.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 mt-0.5" style="background-color: #5a8a5a;">2</div>
+            <div>
+              <h4 class="font-semibold mb-1" style="color: #2d4a2d;">Volunteers sort & price</h4>
+              <p class="text-sm text-gray-600">Our volunteer team organizes and prices materials at a fraction of retail cost — making them accessible to everyone.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 mt-0.5" style="background-color: #5a8a5a;">3</div>
+            <div>
+              <h4 class="font-semibold mb-1" style="color: #2d4a2d;">You find treasures</h4>
+              <p class="text-sm text-gray-600">Visit during open hours and browse our unique, ever-changing inventory. Take home something new to create with.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 mt-0.5" style="background-color: #5a8a5a;">4</div>
+            <div>
+              <h4 class="font-semibold mb-1" style="color: #2d4a2d;">The cycle continues</h4>
+              <p class="text-sm text-gray-600">Your purchase funds our operations, keeping materials out of landfills and the market's mission alive.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="rounded-xl overflow-hidden" style="background-color: #2d4a2d;">
+          <div class="p-8">
+            <h3 class="text-xl font-heading font-bold text-white mb-4">Who shops here?</h3>
+            <ul class="space-y-3 text-green-100 text-sm leading-relaxed">
+              <li class="flex items-start gap-2"><span>🎓</span><span><strong class="text-white">Teachers</strong> — stretching classroom art budgets further</span></li>
+              <li class="flex items-start gap-2"><span>🎨</span><span><strong class="text-white">Artists</strong> — finding unusual media to spark new work</span></li>
+              <li class="flex items-start gap-2"><span>✂️</span><span><strong class="text-white">Crafters</strong> — discovering materials they didn't know they needed</span></li>
+              <li class="flex items-start gap-2"><span>🏠</span><span><strong class="text-white">Homemakers</strong> — creating functional and decorative projects</span></li>
+              <li class="flex items-start gap-2"><span>🌱</span><span><strong class="text-white">Anyone</strong> — who believes in keeping useful things out of the landfill</span></li>
+            </ul>
+          </div>
+          <div class="border-t border-green-700 p-6">
+            <p class="text-green-200 text-sm mb-4">Ready to visit? Check our current hours first — they vary based on volunteer availability.</p>
+            <a href="/hours" class="inline-flex items-center justify-center px-6 py-2.5 rounded-md font-semibold text-green-900 w-full transition-colors" style="background-color: #fbbf24;" onmouseover="this.style.backgroundColor='#f59e0b'" onmouseout="this.style.backgroundColor='#fbbf24'">
+              Hours & Location
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background-color: #f2f7f2;" class="py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center reveal">
+      <h2 class="text-2xl font-heading font-bold mb-3" style="color: #2d4a2d;">Want to see more?</h2>
+      <p class="text-gray-600 mb-6">Follow us on Facebook for photos of new arrivals and upcoming events.</p>
+      <a
+        href="https://www.facebook.com/pages/The-ReUse-Market/157946281103"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-white transition-colors"
+        style="background-color: #1877f2;"
+        onmouseover="this.style.backgroundColor='#0d65d9'"
+        onmouseout="this.style.backgroundColor='#1877f2'"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+        Follow on Facebook
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

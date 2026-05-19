@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block CMS admin from search engines
+Disallow: /admin/
+
+# AI crawlers — allowed for AI search visibility
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://www.reusemarket.org/sitemap.xml

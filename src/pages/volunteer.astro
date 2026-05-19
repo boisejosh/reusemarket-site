@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Volunteer"
+  description="Volunteer with The ReUse Market in Boise, Idaho. Help us keep art and craft materials out of the landfill and in the hands of the community."
+>
+
+  <!-- Page Header -->
+  <section class="py-14 md:py-20" style="background: linear-gradient(135deg, #2d4a2d 0%, #3d6b3d 100%);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <nav class="text-sm text-green-300 mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-green-100">Volunteer</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-heading font-bold text-white">Volunteer</h1>
+      <p class="mt-3 text-green-100 text-lg max-w-xl">The ReUse Market runs entirely on the generosity of community volunteers. Join us.</p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <!-- Form -->
+      <div class="md:col-span-2">
+        <h2 class="text-2xl font-heading font-bold mb-2 reveal" style="color: #2d4a2d;">Sign Up to Volunteer</h2>
+        <p class="text-gray-600 mb-6 reveal reveal-delay-1">
+          Fill out the form below and we'll be in touch when volunteer meetings are scheduled.
+        </p>
+        <p class="text-sm text-gray-500 mb-8 reveal reveal-delay-1 italic">
+          All positions are unpaid, but volunteers earn discounts on purchases within the market. Details will be emailed in a volunteer packet.
+        </p>
+
+        <form
+          id="volunteer-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="space-y-6 reveal reveal-delay-1"
+          novalidate
+        >
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+          <input type="hidden" name="subject" value="New Volunteer Sign-Up — The ReUse Market" />
+          <input type="hidden" name="redirect" value="https://www.reusemarket.org/thank-you" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" aria-hidden="true" />
+
+          <!-- Name row -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="first_name" class="block text-sm font-semibold mb-1.5" style="color: #2d4a2d;">First Name <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="first_name"
+                name="first_name"
+                required
+                autocomplete="given-name"
+                class="w-full px-4 py-2.5 rounded-md border text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                style="border-color: #d1d5db; background-color: white;"
+              />
+            </div>
+            <div>
+              <label for="last_name" class="block text-sm font-semibold mb-1.5" style="color: #2d4a2d;">Last Name <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="last_name"
+                name="last_name"
+                required
+                autocomplete="family-name"
+                class="w-full px-4 py-2.5 rounded-md border text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                style="border-color: #d1d5db; background-color: white;"
+              />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-semibold mb-1.5" style="color: #2d4a2d;">Email Address <span class="text-red-500">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              class="w-full px-4 py-2.5 rounded-md border text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+              style="border-color: #d1d5db; background-color: white;"
+            />
+          </div>
+
+          <!-- Phone -->
+          <div>
+            <label for="phone" class="block text-sm font-semibold mb-1.5" style="color: #2d4a2d;">Phone Number <span class="text-gray-400 font-normal">(optional)</span></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              class="w-full px-4 py-2.5 rounded-md border text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+              style="border-color: #d1d5db; background-color: white;"
+            />
+          </div>
+
+          <!-- Interest checkboxes -->
+          <fieldset>
+            <legend class="block text-sm font-semibold mb-3" style="color: #2d4a2d;">I am interested in helping with (check all that apply)</legend>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {[
+                'Working during market hours',
+                'Coordinating volunteer lists/efforts',
+                'Picking up donations',
+                'Fundraising & marketing',
+                'Grant writing',
+                'Organizing/sorting materials',
+                'Working at booths and events',
+                'Teaching workshops or classes',
+              ].map((option) => (
+                <label class="flex items-start gap-2.5 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    name="interests"
+                    value={option}
+                    class="mt-0.5 w-4 h-4 rounded accent-green-600 flex-shrink-0"
+                  />
+                  <span class="text-sm text-gray-700 group-hover:text-green-700 transition-colors">{option}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <!-- Message -->
+          <div>
+            <label for="message" class="block text-sm font-semibold mb-1.5" style="color: #2d4a2d;">Additional notes <span class="text-gray-400 font-normal">(optional)</span></label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full px-4 py-2.5 rounded-md border text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 resize-y"
+              style="border-color: #d1d5db; background-color: white;"
+              placeholder="Tell us a little about yourself or any skills you'd like to bring..."
+            ></textarea>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <p class="text-sm font-semibold mb-2" style="color: #2d4a2d;">Sign up for our email newsletter?</p>
+            <div class="flex gap-6">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="newsletter" value="yes" class="accent-green-600" /> <span class="text-sm text-gray-700">Yes, please!</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="newsletter" value="no" checked class="accent-green-600" /> <span class="text-sm text-gray-700">No thanks</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="w-full sm:w-auto px-8 py-3 rounded-md font-semibold text-white transition-colors"
+              style="background-color: #5a8a5a; min-width: 200px;"
+              onmouseover="this.style.backgroundColor='#3d6b3d'"
+              onmouseout="this.style.backgroundColor='#5a8a5a'"
+            >
+              Submit Volunteer Form
+            </button>
+            <p class="mt-3 text-xs text-gray-400">Your information is private and will never be shared or sold.</p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-6">
+        <div class="rounded-xl p-6 reveal" style="background-color: #f2f7f2; border: 1px solid #e8f0e8;">
+          <h3 class="font-heading font-semibold text-lg mb-4" style="color: #2d4a2d;">Why Volunteer?</h3>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 mt-0.5">✓</span>
+              <span>Discounts on market purchases</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 mt-0.5">✓</span>
+              <span>Be part of a creative, community-minded team</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 mt-0.5">✓</span>
+              <span>Help keep materials out of the landfill</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 mt-0.5">✓</span>
+              <span>Support arts education in local schools</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 mt-0.5">✓</span>
+              <span>Flexible — hours vary by your availability</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rounded-xl p-6 reveal reveal-delay-1" style="background-color: #fef3c7; border: 1px solid #fde68a;">
+          <h3 class="font-heading font-semibold text-lg mb-3" style="color: #92400e;">Questions?</h3>
+          <p class="text-sm text-amber-900 mb-4">Reach out directly and we'll get back to you.</p>
+          <a href="mailto:info@reusemarket.org" class="text-sm font-semibold" style="color: #92400e;">
+            info@reusemarket.org
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</BaseLayout>

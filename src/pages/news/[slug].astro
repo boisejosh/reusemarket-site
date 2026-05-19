@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const categoryColors: Record<string, string> = {
+  news: '#5a8a5a',
+  events: '#d97706',
+  announcement: '#7c3aed',
+};
+
+const categoryLabels: Record<string, string> = {
+  news: 'News',
+  events: 'Event',
+  announcement: 'Announcement',
+};
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.summary}
+>
+
+  <!-- Post Header -->
+  <section class="py-14 md:py-20" style="background: linear-gradient(135deg, #2d4a2d 0%, #3d6b3d 100%);">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <nav class="text-sm text-green-300 mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/news" class="hover:text-white transition-colors">News & Events</a>
+        <span class="mx-2">/</span>
+        <span class="text-green-100">{post.data.title}</span>
+      </nav>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full text-white" style={`background-color: ${categoryColors[post.data.category] ?? '#5a8a5a'};`}>
+          {categoryLabels[post.data.category] ?? 'News'}
+        </span>
+        <time class="text-green-300 text-sm" datetime={post.data.date.toISOString()}>
+          {post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        </time>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-heading font-bold text-white leading-tight">{post.data.title}</h1>
+    </div>
+  </section>
+
+  <!-- Article content -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+    <div class="prose max-w-none">
+      <Content />
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-gray-200 flex items-center justify-between">
+      <a href="/news" class="text-sm font-semibold transition-colors" style="color: #5a8a5a;">
+        ← Back to News & Events
+      </a>
+      <div class="flex gap-4">
+        <a href="/volunteer" class="text-sm font-semibold text-gray-500 hover:text-green-700 transition-colors">Volunteer</a>
+        <a href="/donate" class="text-sm font-semibold text-gray-500 hover:text-amber-600 transition-colors">Donate</a>
+      </div>
+    </div>
+  </article>
+
+</BaseLayout>

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('news');
+const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const categoryLabels: Record<string, string> = {
+  news: 'News',
+  events: 'Event',
+  announcement: 'Announcement',
+};
+
+const categoryColors: Record<string, string> = {
+  news: '#5a8a5a',
+  events: '#d97706',
+  announcement: '#7c3aed',
+};
+---
+
+<BaseLayout
+  title="News & Events"
+  description="Stay up to date with news, events, and announcements from The ReUse Market in Boise, Idaho."
+>
+
+  <!-- Page Header -->
+  <section class="py-14 md:py-20" style="background: linear-gradient(135deg, #2d4a2d 0%, #3d6b3d 100%);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <nav class="text-sm text-green-300 mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-green-100">News & Events</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-heading font-bold text-white">News & Events</h1>
+      <p class="mt-3 text-green-100 text-lg max-w-xl">Updates, announcements, and upcoming events from The ReUse Market.</p>
+    </div>
+  </section>
+
+  <!-- Posts grid -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
+
+    {posts.length === 0 ? (
+      <div class="text-center py-16 reveal">
+        <div class="text-5xl mb-4">📬</div>
+        <h2 class="text-2xl font-heading font-bold mb-3" style="color: #2d4a2d;">No posts yet</h2>
+        <p class="text-gray-600 max-w-md mx-auto">
+          News and events will appear here. Check back soon, or follow us on Facebook for the latest updates.
+        </p>
+        <a href="https://www.facebook.com/pages/The-ReUse-Market/157946281103" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block px-6 py-2.5 rounded-md font-semibold text-white" style="background-color: #1877f2;">
+          Follow on Facebook
+        </a>
+      </div>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post, i) => (
+          <article class={`bg-white rounded-xl overflow-hidden shadow-sm card-hover reveal${i > 0 ? ` reveal-delay-${Math.min(i, 3)}` : ''}`} style="border: 1px solid #e8f0e8;">
+            <div class="h-1.5" style={`background-color: ${categoryColors[post.data.category] ?? '#5a8a5a'};`}></div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full text-white" style={`background-color: ${categoryColors[post.data.category] ?? '#5a8a5a'};`}>
+                  {categoryLabels[post.data.category] ?? 'News'}
+                </span>
+                <time class="text-xs text-gray-400" datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </time>
+              </div>
+              <h2 class="text-xl font-heading font-semibold mb-2 leading-snug" style="color: #2d4a2d;">
+                <a href={`/news/${post.id}`} class="hover:underline">{post.data.title}</a>
+              </h2>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">{post.data.summary}</p>
+              <a href={`/news/${post.id}`} class="text-sm font-semibold transition-colors" style="color: #5a8a5a;" onmouseover="this.style.color='#2d4a2d'" onmouseout="this.style.color='#5a8a5a'">
+                Read more →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+
+  </section>
+
+</BaseLayout>

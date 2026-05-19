@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Home"
+  description="The ReUse Market keeps clean, reusable art and craft materials out of the landfill and puts them into the hands of artists, teachers, and crafters in Boise, Idaho."
+>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #2d4a2d 0%, #3d6b3d 50%, #4d7c4d 100%);">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10" style="background: radial-gradient(circle, #fbbf24, transparent); transform: translate(30%, -30%);"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10" style="background: radial-gradient(circle, #7aaa7a, transparent); transform: translate(-30%, 30%);"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+      <div class="max-w-2xl">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase mb-6" style="background-color: rgba(250,191,36,0.2); color: #fbbf24;">
+          Boise, Idaho Nonprofit · 501(c)(3)
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
+          Redirecting scrap <br />materials for<br />
+          <span style="color: #fbbf24;">creative reuse.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-green-100 mb-8 leading-relaxed">
+          We collect clean, reusable art and craft materials that might otherwise end up in a landfill — and put them into the hands of artists, teachers, crafters, and the community.
+        </p>
+        <div class="hidden md:flex flex-col sm:flex-row gap-4">
+          <a href="/volunteer" class="inline-flex items-center justify-center px-8 py-3 rounded-md font-semibold text-white transition-colors shadow-lg" style="background-color: #d97706; width: 200px;" onmouseover="this.style.backgroundColor='#b45309'" onmouseout="this.style.backgroundColor='#d97706'">
+            Volunteer
+          </a>
+          <a href="/donate" class="inline-flex items-center justify-center px-8 py-3 rounded-md font-semibold transition-colors border-2 border-white text-white hover:bg-white" style="width: 200px;" onmouseover="this.style.backgroundColor='white'; this.style.color='#2d4a2d';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+            Donate
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Pillars -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4" style="color: #2d4a2d;">What We Do</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+        The ReUse Market is entirely run by community volunteers. Every donation of time or materials helps keep creative resources in circulation.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="rounded-xl p-8 card-hover reveal" style="background-color: #f2f7f2; border: 1px solid #e8f0e8;">
+        <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background-color: #5a8a5a;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-heading font-semibold mb-3" style="color: #2d4a2d;">Creative ReUse</h3>
+        <p class="text-gray-600 leading-relaxed">
+          We give unique, eclectic materials a second life. Artists and crafters find inspiration in our ever-changing inventory of donated supplies.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="rounded-xl p-8 card-hover reveal reveal-delay-1" style="background-color: #f2f7f2; border: 1px solid #e8f0e8;">
+        <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background-color: #5a8a5a;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-heading font-semibold mb-3" style="color: #2d4a2d;">Environmental Stewardship</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Every material we rescue is one less item in a landfill. We encourage environmental responsibility through creative recycling.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="rounded-xl p-8 card-hover reveal reveal-delay-2" style="background-color: #f2f7f2; border: 1px solid #e8f0e8;">
+        <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background-color: #5a8a5a;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+            <path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-heading font-semibold mb-3" style="color: #2d4a2d;">School Art Programs</h3>
+        <p class="text-gray-600 leading-relaxed">
+          As budget cuts target arts education, the ReUse Market serves as a critical resource for teachers to extend their classroom supply budgets.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Action Cards -->
+  <section style="background-color: #f2ede3;" class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10 reveal">
+        <h2 class="text-3xl font-heading font-bold" style="color: #2d4a2d;">Get Involved</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Volunteer -->
+        <div class="rounded-xl overflow-hidden shadow-sm card-hover reveal" style="background: white;">
+          <div class="h-3" style="background-color: #5a8a5a;"></div>
+          <div class="p-8">
+            <h3 class="text-2xl font-heading font-bold mb-3" style="color: #2d4a2d;">Volunteer</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              The market is entirely volunteer-run. Help sort materials, staff the shop, coordinate donations, or teach a workshop.
+            </p>
+            <a href="/volunteer" class="inline-flex items-center justify-center px-6 py-2.5 rounded-md font-semibold text-white transition-colors" style="background-color: #5a8a5a; width: 100%;" onmouseover="this.style.backgroundColor='#3d6b3d'" onmouseout="this.style.backgroundColor='#5a8a5a'">
+              Sign Up to Volunteer
+            </a>
+          </div>
+        </div>
+
+        <!-- Donate -->
+        <div class="rounded-xl overflow-hidden shadow-sm card-hover reveal reveal-delay-1" style="background: white;">
+          <div class="h-3" style="background-color: #d97706;"></div>
+          <div class="p-8">
+            <h3 class="text-2xl font-heading font-bold mb-3" style="color: #2d4a2d;">Donate</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Drop off clean art and craft materials, or make a tax-deductible monetary donation. Businesses welcome — we offer monthly pickup.
+            </p>
+            <a href="/donate" class="inline-flex items-center justify-center px-6 py-2.5 rounded-md font-semibold text-white transition-colors" style="background-color: #d97706; width: 100%;" onmouseover="this.style.backgroundColor='#b45309'" onmouseout="this.style.backgroundColor='#d97706'">
+              Make a Donation
+            </a>
+          </div>
+        </div>
+
+        <!-- Visit -->
+        <div class="rounded-xl overflow-hidden shadow-sm card-hover reveal reveal-delay-2" style="background: white;">
+          <div class="h-3" style="background-color: #5a8a5a;"></div>
+          <div class="p-8">
+            <h3 class="text-2xl font-heading font-bold mb-3" style="color: #2d4a2d;">Visit Us</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Located upstairs in North End Organic Nursery, Garden City. Open Thursday–Saturday, noon to 5 p.m. (hours vary by volunteer availability).
+            </p>
+            <a href="/hours" class="inline-flex items-center justify-center px-6 py-2.5 rounded-md font-semibold transition-colors border-2" style="border-color: #5a8a5a; color: #5a8a5a; width: 100%;" onmouseover="this.style.backgroundColor='#5a8a5a'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#5a8a5a';">
+              Hours & Location
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Statement Banner -->
+  <section class="py-16 md:py-20" style="background-color: #2d4a2d;">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center reveal">
+      <blockquote class="text-2xl md:text-3xl font-heading text-white leading-relaxed mb-6">
+        "Keep clean, reusable art and craft materials out of the landfill — and put them into the hands of those who can imagine something new."
+      </blockquote>
+      <p class="text-green-200 text-sm font-medium uppercase tracking-wider">The ReUse Market Mission</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/about" class="inline-flex items-center justify-center px-6 py-2.5 rounded-md font-semibold border-2 border-white text-white transition-colors" onmouseover="this.style.backgroundColor='white'; this.style.color='#2d4a2d';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';">
+          Our Story
+        </a>
+        <a href="/news" class="inline-flex items-center justify-center px-6 py-2.5 rounded-md font-semibold text-green-900 transition-colors" style="background-color: #fbbf24;" onmouseover="this.style.backgroundColor='#f59e0b'" onmouseout="this.style.backgroundColor='#fbbf24'">
+          News & Events
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,71 @@
+backend:
+  name: github
+  repo: joshcrosby/reusemarket-site
+  branch: main
+  # For local development, uncomment this and use the local-backend proxy:
+  # name: proxy
+  # proxy_url: http://localhost:8082/api/v1
+
+# Allow editorial workflow (drafts before publishing)
+publish_mode: editorial_workflow
+
+# Media uploads go into public/images
+media_folder: public/images
+public_folder: /images
+
+# Site URL for previews
+site_url: https://www.reusemarket.org
+
+# Logo in the CMS header
+logo_url: /images/favicon.png
+
+collections:
+  - name: news
+    label: "News & Events"
+    label_singular: "Post"
+    folder: src/content/news
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    sortable_fields: ['date', 'title', 'category']
+    summary: "{{title}} — {{date}} ({{category}})"
+    fields:
+      - label: "Title"
+        name: title
+        widget: string
+        hint: "The post headline. Keep it clear and specific."
+
+      - label: "Date"
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "MMMM D, YYYY"
+        time_format: false
+        hint: "Publication date."
+
+      - label: "Category"
+        name: category
+        widget: select
+        options:
+          - { label: "News", value: news }
+          - { label: "Event", value: events }
+          - { label: "Announcement", value: announcement }
+        default: news
+
+      - label: "Summary"
+        name: summary
+        widget: text
+        hint: "A 1-2 sentence summary shown in the news listing. Keep it under 200 characters."
+
+      - label: "Featured Post"
+        name: featured
+        widget: boolean
+        default: false
+        hint: "Featured posts may be highlighted on the homepage in the future."
+
+      - label: "Body"
+        name: body
+        widget: markdown
+        hint: "The full post content. Use ## for section headings."
