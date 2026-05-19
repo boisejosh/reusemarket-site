@@ -92,6 +92,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Photo Strip -->
+  <!--
+    PHOTOS: Replace the placeholder images below with real photos of your materials.
+    Drop JPG or PNG files into the public/images/ folder using the filenames listed.
+    Recommended size: 800×600px or larger. The images will crop automatically.
+  -->
+  <section class="py-2" aria-label="Photo gallery of market materials">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 px-2">
+      <div class="aspect-square overflow-hidden rounded-lg reveal">
+        <img
+          src="/images/materials-1.svg"
+          alt="Colorful fabric scraps and textiles at The ReUse Market"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          width="400" height="400"
+          loading="lazy"
+        />
+      </div>
+      <div class="aspect-square overflow-hidden rounded-lg reveal reveal-delay-1">
+        <img
+          src="/images/materials-2.svg"
+          alt="Art supplies and craft materials available at The ReUse Market"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          width="400" height="400"
+          loading="lazy"
+        />
+      </div>
+      <div class="aspect-square overflow-hidden rounded-lg reveal reveal-delay-2">
+        <img
+          src="/images/materials-3.svg"
+          alt="Beads, buttons, and mixed media supplies"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          width="400" height="400"
+          loading="lazy"
+        />
+      </div>
+      <div class="aspect-square overflow-hidden rounded-lg reveal reveal-delay-3">
+        <img
+          src="/images/materials-4.svg"
+          alt="Interior design samples and specialty papers"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          width="400" height="400"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
   <!-- Three Action Cards -->
   <section style="background-color: #f2ede3;" class="py-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">

@@ -20,15 +20,83 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Intro -->
+  <!-- Intro + Photo Gallery -->
+  <!--
+    PHOTOS: Replace placeholder images below with real photos of your market space and materials.
+    Drop JPG or PNG files into public/images/ using the filenames shown.
+    gallery-1.jpg through gallery-5.jpg
+    Recommended sizes:
+      gallery-1: 900×600px (large left panel)
+      gallery-2, gallery-3: 440×290px (top-right pair)
+      gallery-4, gallery-5: 440×290px (bottom-right pair)
+  -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
-    <div class="max-w-3xl">
-      <p class="text-xl text-gray-700 leading-relaxed mb-6 reveal">
-        The ReUse Market stocks an eclectic, ever-changing mix of donated art and craft supplies — all priced well below retail. Every visit is different, because every donation is different.
-      </p>
-      <p class="text-gray-600 leading-relaxed reveal reveal-delay-1">
-        Whether you're an artist looking for unusual materials, a teacher stretching a tight classroom budget, or a crafter who loves a treasure hunt, there's always something worth finding.
-      </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+      <!-- Text -->
+      <div>
+        <p class="text-xl text-gray-700 leading-relaxed mb-6 reveal">
+          The ReUse Market stocks an eclectic, ever-changing mix of donated art and craft supplies — all priced well below retail. Every visit is different, because every donation is different.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8 reveal reveal-delay-1">
+          Whether you're an artist looking for unusual materials, a teacher stretching a tight classroom budget, or a crafter who loves a treasure hunt, there's always something worth finding.
+        </p>
+        <a href="/hours" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-md font-semibold text-white transition-colors reveal reveal-delay-2" style="background-color: #5a8a5a;" onmouseover="this.style.backgroundColor='#3d6b3d'" onmouseout="this.style.backgroundColor='#5a8a5a'">
+          Check Hours Before You Visit →
+        </a>
+      </div>
+
+      <!-- Photo grid -->
+      <div class="grid grid-cols-2 gap-2 reveal reveal-delay-1" aria-label="Photos of market materials">
+        <!-- Large top photo spanning both columns -->
+        <div class="col-span-2 overflow-hidden rounded-xl" style="height: 220px;">
+          <img
+            src="/images/gallery-1.svg"
+            alt="Inside The ReUse Market — shelves of sorted art and craft materials"
+            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            width="900" height="220"
+            loading="lazy"
+          />
+        </div>
+        <!-- Bottom row: 2 smaller photos -->
+        <div class="overflow-hidden rounded-xl" style="height: 160px;">
+          <img
+            src="/images/gallery-2.svg"
+            alt="Fabric scraps and textiles at The ReUse Market"
+            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            width="440" height="160"
+            loading="lazy"
+          />
+        </div>
+        <div class="overflow-hidden rounded-xl" style="height: 160px;">
+          <img
+            src="/images/gallery-3.svg"
+            alt="Art supplies and craft materials"
+            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            width="440" height="160"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Second photo row: wider gallery -->
+  <section class="px-2 pb-4" aria-label="More photos from The ReUse Market">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2">
+      <div class="overflow-hidden rounded-lg reveal" style="height:180px;">
+        <img src="/images/gallery-4.svg" alt="Design samples and specialty materials" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
+      </div>
+      <div class="overflow-hidden rounded-lg reveal reveal-delay-1" style="height:180px;">
+        <img src="/images/gallery-5.svg" alt="Beads, buttons, and mixed media supplies" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
+      </div>
+      <div class="overflow-hidden rounded-lg reveal reveal-delay-2" style="height:180px;">
+        <img src="/images/materials-1.svg" alt="Yarn, ribbon, and textile materials" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
+      </div>
+      <div class="overflow-hidden rounded-lg reveal reveal-delay-3" style="height:180px;">
+        <img src="/images/materials-2.svg" alt="Paper, cardstock, and specialty papers" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" width="400" height="180" loading="lazy" />
+      </div>
     </div>
   </section>
 
